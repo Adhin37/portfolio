@@ -13,7 +13,7 @@ portfolio/
 ├── education.html (Education & certifications)
 ├── contact.html (Contact information)
 └── assets/
-    ├── images/ (For profile photo, logos, etc.)
+    ├── img/ (For profile photo, logos, etc.)
     └── files/ (PDF resume, certificates, etc.)
     ├── css/
     │   └── styles.css (Global stylesheet)

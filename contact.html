@@ -17,6 +17,16 @@
       border-bottom: none;
       padding-bottom: 0;
     }
+    
+    /* Card transition animations */
+    .contact-info-card, .expertise-card {
+      transition: var(--transition);
+    }
+    
+    .contact-info-card:hover, .expertise-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
   </style>
 </head>
 

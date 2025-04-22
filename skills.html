@@ -11,6 +11,220 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Additional styles for the redesigned skills page */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .skill-card {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.12);
+    }
+
+    .skill-card-header {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 1.5rem;
+      position: relative;
+    }
+
+    .skill-card-header h3 {
+      color: white;
+      margin: 0;
+      font-size: 1.3rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .skill-card-header i {
+      margin-right: 0.8rem;
+      font-size: 1.5rem;
+    }
+
+    .skill-card-body {
+      padding: 1.5rem;
+    }
+
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    .skill-item {
+      background-color: #f1f5f9;
+      border-radius: 20px;
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+      border: 1px solid #e2e8f0;
+    }
+
+    .skill-item:hover {
+      background-color: var(--primary-color);
+      color: white;
+      border-color: var(--primary-color);
+      transform: translateY(-2px);
+    }
+
+    .progress-bar-container {
+      margin-bottom: 1.5rem;
+    }
+
+    .progress-bar-label {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    .progress-bar {
+      height: 8px;
+      background-color: #e2e8f0;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      background-color: var(--primary-color);
+      border-radius: 4px;
+    }
+
+    .expertise-level {
+      margin-bottom: 2rem;
+    }
+
+    .expertise-title {
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+      font-size: 1.2rem;
+      color: var(--secondary-color);
+    }
+
+    .expertise-items {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .expertise-item {
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 1rem;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      border: 1px solid #e2e8f0;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .expertise-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+      border-color: var(--primary-color);
+    }
+
+    .expertise-icon {
+      width: 60px;
+      height: 60px;
+      background-color: rgba(37, 99, 235, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+    }
+
+    .expertise-icon i {
+      font-size: 1.5rem;
+      color: var(--primary-color);
+    }
+
+    .expertise-name {
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .expertise-rating {
+      display: flex;
+      justify-content: center;
+      gap: 0.2rem;
+      color: var(--accent-color);
+    }
+
+    .devops-process {
+      margin-top: 3rem;
+    }
+
+    .process-steps {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2rem;
+      justify-content: center;
+    }
+
+    .process-step {
+      flex: 1;
+      min-width: 150px;
+      max-width: 200px;
+      text-align: center;
+      position: relative;
+    }
+
+    .process-step:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      top: 30px;
+      right: -10px;
+      width: 20px;
+      height: 2px;
+      background-color: var(--primary-color);
+    }
+
+    .step-icon {
+      width: 60px;
+      height: 60px;
+      background-color: var(--primary-color);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      color: white;
+    }
+
+    .step-title {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .step-desc {
+      font-size: 0.9rem;
+      color: var(--text-color);
+    }
+
+    @media (max-width: 768px) {
+      .process-step:not(:last-child)::after {
+        display: none;
+      }
+    }
+  </style>
 </head>
 <body>
   <!-- Header -->
@@ -35,149 +249,403 @@
   <section class="hero">
     <div class="container">
       <h1>Compétences Techniques</h1>
-      <p class="hero-subtitle">Une expertise diversifiée en DevOps et développement</p>
+      <p class="hero-subtitle">Une expertise DevOps approfondie forgée par 9 ans d'expérience</p>
     </div>
   </section>
 
-  <!-- Main Skills Section -->
-  <section id="skills">
+  <!-- DevOps Expertise Overview -->
+  <section id="devops-expertise">
     <div class="container">
-      <h2 class="section-title">Compétences</h2>
+      <h2 class="section-title">Expertise DevOps</h2>
       <div class="card">
         <div class="card-content">
-          <h2>Langages et Frameworks</h2>
-          <div class="skill-list">
-            <span class="skill-item">Android</span>
-            <span class="skill-item">Batch</span>
-            <span class="skill-item">C++</span>
-            <span class="skill-item">C#</span>
-            <span class="skill-item">Java</span>
-            <span class="skill-item">Python</span>
-            <span class="skill-item">SQL</span>
-            <span class="skill-item">VBA</span>
-            <span class="skill-item">HTML</span>
-            <span class="skill-item">CSS</span>
-            <span class="skill-item">SASS</span>
-            <span class="skill-item">JavaScript</span>
-            <span class="skill-item">PHP</span>
-            <span class="skill-item">TypeScript</span>
-            <span class="skill-item">Xml</span>
-            <span class="skill-item">Yaml</span>
-          </div>
-          
-          <h2 class="mt-4">Base de données</h2>
-          <div class="skill-list">
-            <span class="skill-item">MySQL</span>
-            <span class="skill-item">MariaDB</span>
-            <span class="skill-item">PostgreSQL</span>
-            <span class="skill-item">H2</span>
-            <span class="skill-item">DB2</span>
-            <span class="skill-item">MongoDb</span>
-            <span class="skill-item">Oracle</span>
-          </div>
-          
-          <h2 class="mt-4">Compétences fonctionnelles</h2>
-          <div class="skill-list">
-            <span class="skill-item">Banque</span>
-            <span class="skill-item">Telecom</span>
-            <span class="skill-item">Nucléaire</span>
-            <span class="skill-item">Education</span>
-          </div>
-          
-          <h2 class="mt-4">Systèmes</h2>
-          <div class="skill-list">
-            <span class="skill-item">Redhat</span>
-            <span class="skill-item">Windows</span>
-            <span class="skill-item">Alpine</span>
-          </div>
-          
-          <h2 class="mt-4">Méthodes</h2>
-          <div class="skill-list">
-            <span class="skill-item">Agile</span>
-            <span class="skill-item">MVC</span>
-            <span class="skill-item">UML</span>
-            <span class="skill-item">Merise</span>
-          </div>
-          
-          <h2 class="mt-4">Outils</h2>
-          <div class="skill-list">
-            <span class="skill-item">Dbeaver</span>
-            <span class="skill-item">MobaXTerm</span>
-            <span class="skill-item">POSTMAN</span>
-            <span class="skill-item">Visual Studio Code</span>
-            <span class="skill-item">Eclipse</span>
-            <span class="skill-item">Putty</span>
-            <span class="skill-item">StarUML</span>
-            <span class="skill-item">Tomcat</span>
-            <span class="skill-item">Apache</span>
-            <span class="skill-item">Jenkins</span>
-            <span class="skill-item">Ansible</span>
-            <span class="skill-item">Kubernetes</span>
-            <span class="skill-item">Git gui</span>
-            <span class="skill-item">Gitlab</span>
-            <span class="skill-item">Microsoft Office</span>
-            <span class="skill-item">Helm</span>
-          </div>
-          
-          <h2 class="mt-4">Frameworks</h2>
-          <div class="skill-list">
-            <span class="skill-item">Angular</span>
-            <span class="skill-item">Bottle</span>
-            <span class="skill-item">Spring Boot</span>
-            <span class="skill-item">Bootstrap</span>
-            <span class="skill-item">Material</span>
-            <span class="skill-item">Symphony</span>
+          <div class="devops-process">
+            <div class="process-steps">
+              <div class="process-step">
+                <div class="step-icon">
+                  <i class="fas fa-code"></i>
+                </div>
+                <div class="step-title">Développement</div>
+                <div class="step-desc">Intégration des standards de qualité dès le développement</div>
+              </div>
+              <div class="process-step">
+                <div class="step-icon">
+                  <i class="fas fa-vial"></i>
+                </div>
+                <div class="step-title">Test</div>
+                <div class="step-desc">Automatisation des tests unitaires et d'intégration</div>
+              </div>
+              <div class="process-step">
+                <div class="step-icon">
+                  <i class="fas fa-cube"></i>
+                </div>
+                <div class="step-title">Build</div>
+                <div class="step-desc">Construction des artéfacts et des images conteneurs</div>
+              </div>
+              <div class="process-step">
+                <div class="step-icon">
+                  <i class="fas fa-rocket"></i>
+                </div>
+                <div class="step-title">Déploiement</div>
+                <div class="step-desc">Déploiement automatisé et orchestré</div>
+              </div>
+              <div class="process-step">
+                <div class="step-icon">
+                  <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="step-title">Monitoring</div>
+                <div class="step-desc">Surveillance continue et alerting</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- DevOps Expertise -->
-  <section id="devops-expertise" class="light-bg">
+  <!-- Main Skills Section with Cards -->
+  <section id="skills" class="light-bg">
     <div class="container">
-      <h2 class="section-title">Expertise DevOps</h2>
+      <h2 class="section-title">Compétences Techniques</h2>
+      
+      <div class="skills-grid">
+        <!-- DevOps & Cloud -->
+        <div class="skill-card">
+          <div class="skill-card-header">
+            <h3><i class="fas fa-cloud"></i> DevOps & Cloud</h3>
+          </div>
+          <div class="skill-card-body">
+            <div class="progress-bar-container">
+              <div class="progress-bar-label">
+                <span>Kubernetes</span>
+                <span>90%</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-bar-fill" style="width: 90%"></div>
+              </div>
+            </div>
+            <div class="progress-bar-container">
+              <div class="progress-bar-label">
+                <span>Docker</span>
+                <span>95%</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-bar-fill" style="width: 95%"></div>
+              </div>
+            </div>
+            <div class="progress-bar-container">
+              <div class="progress-bar-label">
+                <span>Jenkins</span>
+                <span>85%</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-bar-fill" style="width: 85%"></div>
+              </div>
+            </div>
+            <div class="progress-bar-container">
+              <div class="progress-bar-label">
+                <span>Ansible</span>
+                <span>80%</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-bar-fill" style="width: 80%"></div>
+              </div>
+            </div>
+            <div class="skill-list">
+              <span class="skill-item">Git</span>
+              <span class="skill-item">Gitlab</span>
+              <span class="skill-item">Helm</span>
+              <span class="skill-item">Rancher</span>
+              <span class="skill-item">SonarQube</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Langages & Frameworks -->
+        <div class="skill-card">
+          <div class="skill-card-header">
+            <h3><i class="fas fa-code"></i> Langages</h3>
+          </div>
+          <div class="skill-card-body">
+            <div class="progress-bar-container">
+              <div class="progress-bar-label">
+                <span>Python</span>
+                <span>85%</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-bar-fill" style="width: 85%"></div>
+              </div>
+            </div>
+            <div class="progress-bar-container">
+              <div class="progress-bar-label">
+                <span>Java</span>
+                <span>80%</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-bar-fill" style="width: 80%"></div>
+              </div>
+            </div>
+            <div class="progress-bar-container">
+              <div class="progress-bar-label">
+                <span>JavaScript/TypeScript</span>
+                <span>75%</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-bar-fill" style="width: 75%"></div>
+              </div>
+            </div>
+            <div class="skill-list">
+              <span class="skill-item">SQL</span>
+              <span class="skill-item">C++</span>
+              <span class="skill-item">C#</span>
+              <span class="skill-item">YAML</span>
+              <span class="skill-item">HTML/CSS</span>
+              <span class="skill-item">Bash</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Frameworks -->
+        <div class="skill-card">
+          <div class="skill-card-header">
+            <h3><i class="fas fa-layer-group"></i> Frameworks</h3>
+          </div>
+          <div class="skill-card-body">
+            <div class="progress-bar-container">
+              <div class="progress-bar-label">
+                <span>Spring Boot</span>
+                <span>80%</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-bar-fill" style="width: 80%"></div>
+              </div>
+            </div>
+            <div class="progress-bar-container">
+              <div class="progress-bar-label">
+                <span>Angular</span>
+                <span>75%</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-bar-fill" style="width: 75%"></div>
+              </div>
+            </div>
+            <div class="skill-list">
+              <span class="skill-item">Bottle</span>
+              <span class="skill-item">Bootstrap</span>
+              <span class="skill-item">Material</span>
+              <span class="skill-item">Symfony</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Base de données -->
+        <div class="skill-card">
+          <div class="skill-card-header">
+            <h3><i class="fas fa-database"></i> Base de données</h3>
+          </div>
+          <div class="skill-card-body">
+            <div class="progress-bar-container">
+              <div class="progress-bar-label">
+                <span>PostgreSQL</span>
+                <span>85%</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-bar-fill" style="width: 85%"></div>
+              </div>
+            </div>
+            <div class="progress-bar-container">
+              <div class="progress-bar-label">
+                <span>MySQL/MariaDB</span>
+                <span>80%</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-bar-fill" style="width: 80%"></div>
+              </div>
+            </div>
+            <div class="skill-list">
+              <span class="skill-item">MongoDB</span>
+              <span class="skill-item">Oracle</span>
+              <span class="skill-item">H2</span>
+              <span class="skill-item">DB2</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Expertise Levels Section -->
+  <section id="expertise-levels">
+    <div class="container">
+      <h2 class="section-title">Domaines d'Expertise</h2>
+      
       <div class="card">
         <div class="card-content">
-          <p>En tant qu'ingénieur DevOps avec 9 ans d'expérience, j'ai développé une expertise approfondie dans la mise en place de chaînes d'automatisation continue, du développement jusqu'à la production. Mes compétences principales incluent :</p>
+          <div class="expertise-level">
+            <h3 class="expertise-title">Expertise DevOps</h3>
+            <div class="expertise-items">
+              <div class="expertise-item">
+                <div class="expertise-icon">
+                  <i class="fas fa-cube"></i>
+                </div>
+                <div class="expertise-name">Conteneurisation</div>
+                <div class="expertise-rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+              <div class="expertise-item">
+                <div class="expertise-icon">
+                  <i class="fas fa-ship"></i>
+                </div>
+                <div class="expertise-name">Kubernetes</div>
+                <div class="expertise-rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+              <div class="expertise-item">
+                <div class="expertise-icon">
+                  <i class="fas fa-sync-alt"></i>
+                </div>
+                <div class="expertise-name">CI/CD</div>
+                <div class="expertise-rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                </div>
+              </div>
+              <div class="expertise-item">
+                <div class="expertise-icon">
+                  <i class="fas fa-robot"></i>
+                </div>
+                <div class="expertise-name">Automatisation</div>
+                <div class="expertise-rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="expertise-level">
+            <h3 class="expertise-title">Compétences fonctionnelles</h3>
+            <div class="expertise-items">
+              <div class="expertise-item">
+                <div class="expertise-icon">
+                  <i class="fas fa-university"></i>
+                </div>
+                <div class="expertise-name">Banque</div>
+                <div class="expertise-rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
+                </div>
+              </div>
+              <div class="expertise-item">
+                <div class="expertise-icon">
+                  <i class="fas fa-broadcast-tower"></i>
+                </div>
+                <div class="expertise-name">Telecom</div>
+                <div class="expertise-rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
+                </div>
+              </div>
+              <div class="expertise-item">
+                <div class="expertise-icon">
+                  <i class="fas fa-atom"></i>
+                </div>
+                <div class="expertise-name">Nucléaire</div>
+                <div class="expertise-rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                  <i class="far fa-star"></i>
+                </div>
+              </div>
+              <div class="expertise-item">
+                <div class="expertise-icon">
+                  <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div class="expertise-name">Education</div>
+                <div class="expertise-rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Advanced DevOps Expertise -->
+  <section id="advanced-devops" class="light-bg">
+    <div class="container">
+      <h2 class="section-title">Réalisations DevOps</h2>
+      <div class="card">
+        <div class="card-content">
+          <p>Mon expertise DevOps se traduit par des réalisations concrètes qui ont transformé les processus de développement et de déploiement dans chacune de mes missions:</p>
           
           <div class="skill-category mt-3">
-            <h3>Conteneurisation et Orchestration</h3>
+            <h3><i class="fas fa-rocket"></i> Optimisation de la Livraison</h3>
             <ul>
-              <li>Mise en place d'environnements Kubernetes pour l'orchestration de conteneurs</li>
-              <li>Configuration et déploiement avec Helm</li>
-              <li>Administration de clusters sous Rancher</li>
-              <li>Containerisation d'applications avec Docker</li>
+              <li>Réduction des temps de déploiement de plusieurs heures à moins de 15 minutes</li>
+              <li>Mise en place de stratégies de déploiement zero-downtime avec Kubernetes</li>
+              <li>Automatisation des processus de rollback en cas d'erreur</li>
+              <li>Implémentation de tests automatisés pour garantir la qualité des déploiements</li>
             </ul>
           </div>
           
           <div class="skill-category mt-3">
-            <h3>CI/CD et Automatisation</h3>
+            <h3><i class="fas fa-exchange-alt"></i> Migration vers le Cloud</h3>
             <ul>
-              <li>Configuration et optimisation de pipelines Jenkins</li>
-              <li>Automatisation des déploiements avec Ansible</li>
-              <li>Intégration de tests automatisés (tests unitaires, tests e2e)</li>
+              <li>Migration réussie d'applications monolithiques vers des architectures microservices</li>
+              <li>Transformation d'applications sur VM vers des containers orchestrés</li>
+              <li>Mise en place de stratégies d'auto-scaling pour optimiser les ressources</li>
+              <li>Implémentation de haute disponibilité pour les applications critiques</li>
+            </ul>
+          </div>
+          
+          <div class="skill-category mt-3">
+            <h3><i class="fas fa-shield-alt"></i> Qualité et Sécurité</h3>
+            <ul>
+              <li>Intégration de SonarQube dans les pipelines CI/CD pour l'analyse de code</li>
+              <li>Mise en place de scanning de vulnérabilités des images Docker</li>
               <li>Implémentation de tests d'infrastructure avec Molecule</li>
+              <li>Développement de standards de qualité avec linters et formatters automatisés</li>
             </ul>
           </div>
           
           <div class="skill-category mt-3">
-            <h3>Qualité et Monitoring</h3>
+            <h3><i class="fas fa-chart-line"></i> Monitoring et Observabilité</h3>
             <ul>
-              <li>Intégration de SonarQube pour l'analyse de code</li>
-              <li>Mise en place de standards de qualité avec Eslint</li>
-              <li>Configuration de monitoring avec Prometheus</li>
-              <li>Mise en place de stratégies de tests complets</li>
-            </ul>
-          </div>
-          
-          <div class="skill-category mt-3">
-            <h3>Migration et Modernisation</h3>
-            <ul>
-              <li>Migration de VM vers des architectures containerisées</li>
-              <li>Transformation d'applications monolithiques en micro-services</li>
-              <li>Mise à niveau de frameworks (ex: Angular 8 vers 12)</li>
-              <li>Optimisation des processus de livraison</li>
+              <li>Configuration de dashboards Prometheus pour le monitoring en temps réel</li>
+              <li>Mise en place de systèmes d'alerting proactifs</li>
+              <li>Centralisation des logs pour analyse et troubleshooting</li>
+              <li>Développement de KPIs pour mesurer l'efficacité des pipelines de déploiement</li>
             </ul>
           </div>
         </div>
@@ -187,23 +655,23 @@
 
   <!-- Footer -->
   <footer>
-  <div class="container footer-container">
-    <div class="footer-info">
-      <p class="copyright">© 2025 Thomas DEMAY. Tous droits réservés.</p>
+    <div class="container footer-container">
+      <div class="footer-info">
+        <p class="copyright">© 2025 Thomas DEMAY. Tous droits réservés.</p>
+      </div>
+      <div class="social-links">
+        <a href="https://linkedin.com/in/thomasdemay37" target="_blank" class="social-link" aria-label="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/Adhin37" target="_blank" class="social-link" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="mailto:thomasdemay37@gmail.com" class="social-link" aria-label="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
     </div>
-    <div class="social-links">
-      <a href="https://linkedin.com/in/thomasdemay37" target="_blank" class="social-link" aria-label="LinkedIn">
-        <i class="fab fa-linkedin"></i>
-      </a>
-      <a href="https://github.com/Adhin37" target="_blank" class="social-link" aria-label="GitHub">
-        <i class="fab fa-github"></i>
-      </a>
-      <a href="mailto:thomasdemay37@gmail.com" class="social-link" aria-label="Email">
-        <i class="fas fa-envelope"></i>
-      </a>
-    </div>
-  </div>
-</footer>
+  </footer>
 
   <script src="assets/js/main.js"></script>
 </body>

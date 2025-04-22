@@ -44,36 +44,91 @@
   <!-- Contact Section -->
   <section id="contact">
     <div class="container">
-      <h2 class="section-title">Informations de contact</h2>
-      <div class="card">
-        <div class="card-content">
-          <div class="contact-info mb-4">
-            <p>Je suis actuellement disponible pour des missions en tant qu'ingénieur DevOps, avec une préférence pour
-              les projets impliquant:</p>
-
-            <ul class="mt-3">
-              <li>La mise en place ou l'optimisation de chaînes d'automatisation continue</li>
-              <li>La migration vers des architectures containerisées et Kubernetes</li>
-              <li>L'amélioration des processus de livraison</li>
-              <li>Le coaching d'équipes dans l'adoption des pratiques DevOps</li>
-            </ul>
-
-            <div class="text-center mt-4">
-              <a href="assets/files/CV_Thomas_DEMAY.pdf" class="btn btn-outline" target="_blank">Télécharger mon CV</a>
+      <div class="contact-grid">
+        <!-- Left column: Contact information -->
+        <div class="contact-info-card">
+          <h2>Mes coordonnées</h2>
+          
+          <div class="contact-method">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
             </div>
-
-            <div class="contact-details mt-3">
-              <div class="contact-item">
-                <strong>Email:</strong>
-                <a href="mailto:thomasdemay37@gmail.com">thomasdemay37@gmail.com</a>
+            <div class="contact-details">
+              <h3>Email</h3>
+              <a href="mailto:thomasdemay37@gmail.com" class="contact-link">thomasdemay37@gmail.com</a>
+            </div>
+          </div>
+          
+          <div class="contact-method">
+            <div class="contact-icon">
+              <i class="fab fa-linkedin"></i>
+            </div>
+            <div class="contact-details">
+              <h3>LinkedIn</h3>
+              <a href="https://linkedin.com/in/thomasdemay37" target="_blank" class="contact-link">linkedin.com/in/thomasdemay37</a>
+            </div>
+          </div>
+          
+          <div class="contact-method">
+            <div class="contact-icon">
+              <i class="fab fa-github"></i>
+            </div>
+            <div class="contact-details">
+              <h3>GitHub</h3>
+              <a href="https://github.com/Adhin37" target="_blank" class="contact-link">github.com/Adhin37</a>
+            </div>
+          </div>
+          
+          <div class="contact-cv">
+            <a href="assets/files/CV_Thomas_DEMAY.pdf" class="btn" target="_blank">
+              <i class="fas fa-file-pdf"></i> Télécharger mon CV
+            </a>
+          </div>
+        </div>
+        
+        <!-- Right column: Expertise -->
+        <div class="expertise-card">
+          <h2>Domaines d'expertise</h2>
+          <p>Je suis actuellement disponible pour des missions en tant qu'ingénieur DevOps, spécialisé dans :</p>
+          
+          <div class="expertise-items">
+            <div class="expertise-item">
+              <div class="expertise-icon">
+                <i class="fas fa-cogs"></i>
               </div>
-              <div class="contact-item">
-                <strong>LinkedIn:</strong>
-                <a href="https://linkedin.com/in/thomasdemay37" target="_blank">linkedin.com/in/thomasdemay37</a>
+              <div class="expertise-text">
+                <h3>Automatisation</h3>
+                <p>Mise en place et optimisation de chaînes d'automatisation continue (CI/CD)</p>
               </div>
-              <div class="contact-item">
-                <strong>GitHub:</strong>
-                <a href="https://github.com/Adhin37" target="_blank">github.com/Adhin37</a>
+            </div>
+            
+            <div class="expertise-item">
+              <div class="expertise-icon">
+                <i class="fab fa-docker"></i>
+              </div>
+              <div class="expertise-text">
+                <h3>Containerisation</h3>
+                <p>Migration et déploiement d'architectures containerisées et Kubernetes</p>
+              </div>
+            </div>
+            
+            <div class="expertise-item">
+              <div class="expertise-icon">
+                <i class="fas fa-code-branch"></i>
+              </div>
+              <div class="expertise-text">
+                <h3>Livraison continue</h3>
+                <p>Amélioration des processus de livraison et déploiement</p>
+              </div>
+            </div>
+            
+            <div class="expertise-item">
+              <div class="expertise-icon">
+                <i class="fas fa-users"></i>
+              </div>
+              <div class="expertise-text">
+                <h3>Coaching DevOps</h3>
+                <p>Accompagnement d'équipes dans l'adoption des pratiques DevOps</p>
               </div>
             </div>
           </div>
@@ -84,23 +139,23 @@
 
   <!-- Footer -->
   <footer>
-  <div class="container footer-container">
-    <div class="footer-info">
-      <p class="copyright">© 2025 Thomas DEMAY. Tous droits réservés.</p>
+    <div class="container footer-container">
+      <div class="footer-info">
+        <p class="copyright">© 2025 Thomas DEMAY. Tous droits réservés.</p>
+      </div>
+      <div class="social-links">
+        <a href="https://linkedin.com/in/thomasdemay37" target="_blank" class="social-link" aria-label="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/Adhin37" target="_blank" class="social-link" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="mailto:thomasdemay37@gmail.com" class="social-link" aria-label="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
     </div>
-    <div class="social-links">
-      <a href="https://linkedin.com/in/thomasdemay37" target="_blank" class="social-link" aria-label="LinkedIn">
-        <i class="fab fa-linkedin"></i>
-      </a>
-      <a href="https://github.com/Adhin37" target="_blank" class="social-link" aria-label="GitHub">
-        <i class="fab fa-github"></i>
-      </a>
-      <a href="mailto:thomasdemay37@gmail.com" class="social-link" aria-label="Email">
-        <i class="fas fa-envelope"></i>
-      </a>
-    </div>
-  </div>
-</footer>
+  </footer>
 
   <script src="assets/js/main.js"></script>
 </body>

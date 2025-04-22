@@ -12,13 +12,13 @@ portfolio/
 ├── skills.html (Technical skills)
 ├── education.html (Education & certifications)
 ├── contact.html (Contact information)
-├── css/
-│   └── styles.css (Global stylesheet)
-├── js/
-│   └── main.js (JavaScript functionality)
 └── assets/
     ├── images/ (For profile photo, logos, etc.)
     └── files/ (PDF resume, certificates, etc.)
+    ├── css/
+    │   └── styles.css (Global stylesheet)
+    └── js/
+        └── main.js (JavaScript functionality)
 ```
 
 ## Features
@@ -46,8 +46,8 @@ To view or modify this portfolio:
 3. Navigate through the different HTML pages to explore the portfolio
 4. To customize:
    - Edit HTML files to update content
-   - Modify `css/main.css` for styling changes
-   - Update `js/main.js` for functionality adjustments
+   - Modify `assets/css/styles.css` for styling changes
+   - Update `assets/js/main.js` for functionality adjustments
    - Add or replace images in the `assets/img` directory
    - Update resume or certificates in the `assets/files` directory
 

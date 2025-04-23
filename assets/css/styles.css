@@ -49,12 +49,12 @@ h2 {
   font-size: 2rem;
   border-bottom: 2px solid var(--border-color);
   padding-bottom: 0.5rem;
-  margin-top: 2rem;
+  margin-top: 8px;
 }
 
 h3 {
   font-size: 1.5rem;
-  margin-top: 1.5rem;
+  margin-top: 8px;
 }
 
 p {

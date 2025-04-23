@@ -46,10 +46,7 @@
   font-size: 1rem;
 }
 
-.devops-process {
-  margin-top: 3rem;
-}
-.process-steps {
+.devops-steps {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
@@ -57,28 +54,29 @@
   justify-content: center;
 }
 
-.process-step {
+.devops-steps .card-item {
   flex: 1;
   min-width: 150px;
   max-width: 200px;
   text-align: center;
   position: relative;
+  flex-direction: column;
+  padding: 1rem;
 }
 
-.process-step:not(:last-child)::after {
+.devops-steps .card-item:not(:last-child)::after {
   content: "";
   position: absolute;
-  top: 30px;
+  top: 45px;
   right: -10px;
   width: 20px;
   height: 2px;
   background-color: var(--primary-color);
 }
 
-.step-icon {
+.devops-steps .card-icon {
   width: 60px;
   height: 60px;
-  background-color: var(--secondary-color);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -87,41 +85,22 @@
   color: white;
 }
 
-.step-icon:hover {
-  background-color: var(--primary-color);
-  color: white;
+.devops-steps .card-content {
+  text-align: center;
 }
 
-.step-title {
+.devops-steps .card-content h3 {
   font-weight: 600;
   margin-bottom: 0.5rem;
 }
 
-.step-desc {
+.devops-steps .card-content p {
   font-size: 0.9rem;
   color: var(--text-color);
 }
 
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  margin-top: 2rem;
-}
-@media (max-width: 1200px) {
-  .skills-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
 @media (max-width: 768px) {
-  .skills-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 768px) {
-  .process-step:not(:last-child)::after {
+  .devops-steps .card-item:not(:last-child)::after {
     display: none;
   }
 }

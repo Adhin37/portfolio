@@ -1,0 +1,48 @@
+/* Auto fade effect for sections - Only applies to index.html */
+.fade-section {
+    position: relative;
+    transition: all 0.4s ease;
+  }
+  
+  /* Make sure section title is always visible */
+  .fade-section .section-title {
+    opacity: 1 !important;
+    margin-bottom: 1rem;
+  }
+  
+  /* Add subtle hint that content is interactive */
+  .fade-section .section-bottom-content.faded {
+    position: relative;
+  }
+  
+  .fade-section .section-bottom-content.faded::after {
+    content: 'Hover to view';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(37, 99, 235, 0.8);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    pointer-events: none;
+    opacity: 0.8;
+  }
+  .section-header-wrapper {
+    padding-bottom: 0.5rem;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .section-bottom-content {
+    transition: all 1.5s ease;
+    height: auto;
+    opacity: 1;
+  }
+  
+  .section-bottom-content.faded {
+    opacity: 0.2;
+    max-height: 120px; /* Show just a glimpse of the content */
+    overflow: hidden;
+  }

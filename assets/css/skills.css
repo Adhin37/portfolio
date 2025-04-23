@@ -1,0 +1,127 @@
+.expertise-title {
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+  color: var(--secondary-color);
+}
+
+.expertise-level .card-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.expertise-level .card-item {
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.expertise-level .card-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  border-color: var(--primary-color);
+}
+
+.expertise-level .card-icon {
+  margin-bottom: 0.5rem;
+}
+
+.expertise-level .card-content {
+  text-align: center;
+  margin-top: 0;
+}
+
+.expertise-level .card-content h3 {
+  margin: 0;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.devops-process {
+  margin-top: 3rem;
+}
+.process-steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+  justify-content: center;
+}
+
+.process-step {
+  flex: 1;
+  min-width: 150px;
+  max-width: 200px;
+  text-align: center;
+  position: relative;
+}
+
+.process-step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 30px;
+  right: -10px;
+  width: 20px;
+  height: 2px;
+  background-color: var(--primary-color);
+}
+
+.step-icon {
+  width: 60px;
+  height: 60px;
+  background-color: var(--secondary-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  color: white;
+}
+
+.step-icon:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.step-title {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.step-desc {
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+@media (max-width: 1200px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .process-step:not(:last-child)::after {
+    display: none;
+  }
+}

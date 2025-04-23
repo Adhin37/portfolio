@@ -12,23 +12,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    .expertise-item:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
-    }
-
-    .contact-info-card,
-    .expertise-card {
-      transition: var(--transition);
-    }
-
-    .contact-info-card:hover,
-    .expertise-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    }
-  </style>
 </head>
 
 <body>
@@ -60,46 +43,46 @@
   <section id="contact">
     <div class="container">
       <div class="contact-grid">
-        <div class="expertise-card">
+        <div class="info-card">
           <h2>Domaines d'expertise</h2>
           <p>Je suis actuellement disponible pour des missions en tant qu'ingénieur DevOps spécialisé dans les domaines
             suivants :</p>
-          <div class="expertise-items">
-            <div class="expertise-item">
-              <div class="expertise-icon">
+          <div class="card-items">
+            <div class="card-item">
+              <div class="card-icon">
                 <i class="fas fa-cogs"></i>
               </div>
-              <div class="expertise-text">
+              <div class="card-content">
                 <h3>Automatisation</h3>
                 <p>Mise en place et optimisation de chaînes d'automatisation continue (CI/CD)</p>
               </div>
             </div>
 
-            <div class="expertise-item">
-              <div class="expertise-icon">
+            <div class="card-item">
+              <div class="card-icon">
                 <i class="fab fa-docker"></i>
               </div>
-              <div class="expertise-text">
+              <div class="card-content">
                 <h3>Containerisation</h3>
                 <p>Migration et déploiement d'architectures containerisées et Kubernetes</p>
               </div>
             </div>
 
-            <div class="expertise-item">
-              <div class="expertise-icon">
+            <div class="card-item">
+              <div class="card-icon">
                 <i class="fas fa-code-branch"></i>
               </div>
-              <div class="expertise-text">
+              <div class="card-content">
                 <h3>Livraison continue</h3>
                 <p>Amélioration des processus de livraison et déploiement</p>
               </div>
             </div>
 
-            <div class="expertise-item">
-              <div class="expertise-icon">
+            <div class="card-item">
+              <div class="card-icon">
                 <i class="fas fa-users"></i>
               </div>
-              <div class="expertise-text">
+              <div class="card-content">
                 <h3>Coaching DevOps</h3>
                 <p>Accompagnement d'équipes dans l'adoption des pratiques DevOps</p>
               </div>
@@ -107,36 +90,38 @@
           </div>
         </div>
 
-        <div class="contact-info-card">
+        <div class="info-card">
           <h2>Mes coordonnées</h2>
-          <div class="contact-method">
-            <div class="contact-icon">
-              <i class="fas fa-envelope"></i>
+          <div class="card-items">
+            <div class="card-item">
+              <div class="card-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="card-content">
+                <h3>Email</h3>
+                <a href="mailto:thomasdemay37@gmail.com" class="contact-link">thomasdemay37@gmail.com</a>
+              </div>
             </div>
-            <div class="contact-details">
-              <h3>Email</h3>
-              <a href="mailto:thomasdemay37@gmail.com" class="contact-link">thomasdemay37@gmail.com</a>
-            </div>
-          </div>
 
-          <div class="contact-method">
-            <div class="contact-icon">
-              <i class="fab fa-linkedin"></i>
+            <div class="card-item">
+              <div class="card-icon">
+                <i class="fab fa-linkedin"></i>
+              </div>
+              <div class="card-content">
+                <h3>LinkedIn</h3>
+                <a href="https://linkedin.com/in/thomasdemay37" target="_blank"
+                  class="contact-link">linkedin.com/in/thomasdemay37</a>
+              </div>
             </div>
-            <div class="contact-details">
-              <h3>LinkedIn</h3>
-              <a href="https://linkedin.com/in/thomasdemay37" target="_blank"
-                class="contact-link">linkedin.com/in/thomasdemay37</a>
-            </div>
-          </div>
 
-          <div class="contact-method">
-            <div class="contact-icon">
-              <i class="fab fa-github"></i>
-            </div>
-            <div class="contact-details">
-              <h3>GitHub</h3>
-              <a href="https://github.com/Adhin37" target="_blank" class="contact-link">github.com/Adhin37</a>
+            <div class="card-item">
+              <div class="card-icon">
+                <i class="fab fa-github"></i>
+              </div>
+              <div class="card-content">
+                <h3>GitHub</h3>
+                <a href="https://github.com/Adhin37" target="_blank" class="contact-link">github.com/Adhin37</a>
+              </div>
             </div>
           </div>
 

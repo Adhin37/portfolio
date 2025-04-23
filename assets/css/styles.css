@@ -530,32 +530,51 @@ footer {
   margin-bottom: 2rem;
 }
 
-.contact-info-card {
+/* Card Styling */
+.info-card {
   background-color: var(--bg-color);
   border-radius: 8px;
   box-shadow: var(--shadow);
   padding: 2rem;
+  transition: var(--transition);
 }
 
-.contact-info-card h2 {
+.info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.info-card h2 {
   border-bottom: 2px solid var(--border-color);
   padding-bottom: 1rem;
   margin-bottom: 1.5rem;
 }
 
-.contact-method {
-  display: flex;
-  align-items: center;
+.info-card > p {
   margin-bottom: 1.5rem;
+  color: var(--text-color);
+}
+
+/* Unified Card Items */
+.card-items {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.card-item {
+  display: flex;
+  gap: 1rem;
   padding-bottom: 1.5rem;
   border-bottom: 1px solid var(--border-color);
+  align-items: center;
 }
 
-.contact-method:last-of-type {
+.card-item:last-child {
   border-bottom: none;
+  padding-bottom: 0;
 }
 
-.contact-icon {
+.card-icon {
   flex-shrink: 0;
   width: 60px;
   height: 60px;
@@ -564,24 +583,39 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 1rem;
 }
 
-.contact-icon i {
+.card-icon.small {
+  width: 50px;
+  height: 50px;
+}
+
+.card-icon i {
   font-size: 1.5rem;
   color: var(--secondary-color);
 }
 
-.contact-details {
+.card-icon.small i {
+  font-size: 1.25rem;
+}
+
+.card-content {
   flex-grow: 1;
 }
 
-.contact-details h3 {
+.card-content h3 {
   margin: 0 0 0.5rem 0;
   color: var(--secondary-color);
   font-size: 1.1rem;
 }
 
+.card-content p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--text-color);
+}
+
+/* Contact specific styling */
 .contact-link {
   font-size: 1rem;
   color: var(--primary-color);
@@ -628,78 +662,11 @@ footer {
   font-size: 1.2rem;
 }
 
-/* Expertise Card */
-.expertise-card {
-  background-color: var(--bg-color);
-  border-radius: 8px;
-  box-shadow: var(--shadow);
-  padding: 2rem;
-}
-
-.expertise-card h2 {
-  border-bottom: 2px solid var(--border-color);
-  padding-bottom: 1rem;
-  margin-bottom: 1.5rem;
-}
-
-.expertise-card > p {
-  margin-bottom: 1.5rem;
-  color: var(--text-color);
-}
-
-.expertise-items {
-  display: grid;
-  gap: 1.5rem;
-}
-
-.expertise-item {
-  display: flex;
-  gap: 1rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid var(--border-color);
-}
-
-.expertise-icon {
-  flex-shrink: 0;
-  width: 50px;
-  height: 50px;
-  background-color: rgba(37, 99, 235, 0.1);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.expertise-icon i {
-  font-size: 1.25rem;
-  color: var(--secondary-color);
-}
-
-.contact-icon:hover i,
-.expertise-icon:hover i{
-  color: var(--primary-color);
-}
-
-.contact-item:hover .contact-icon i,
-.expertise-item:hover .expertise-icon i {
+/* Icon hover effects */
+.skill-card:hover .skill-card-header h3 i,
+.card-item:hover .card-icon i {
   color: var(--primary-color);
   animation: pulse 1.5s infinite;
-}
-
-.expertise-text {
-  flex-grow: 1;
-}
-
-.expertise-text h3 {
-  margin: 0 0 0.5rem 0;
-  font-size: 1.1rem;
-  color: var(--secondary-color);
-}
-
-.expertise-text p {
-  margin: 0;
-  font-size: 0.95rem;
-  color: var(--text-color);
 }
 
 /* Responsive adjustments */
@@ -708,20 +675,18 @@ footer {
     grid-template-columns: 1fr;
   }
 
-  .contact-info-card {
+  .info-card:first-child {
     margin-bottom: 2rem;
   }
 }
 
 @media (max-width: 580px) {
-  .contact-method,
-  .expertise-item {
+  .card-item {
     flex-direction: column;
     text-align: center;
   }
 
-  .contact-icon,
-  .expertise-icon {
+  .card-icon {
     margin: 0 auto 1rem;
   }
 
@@ -731,6 +696,7 @@ footer {
   }
 }
 
+/* Responsive adjustments */
 @media (max-width: 768px) {
   .header-container {
     position: relative;
@@ -740,7 +706,7 @@ footer {
     display: block;
     position: absolute;
     right: 20px;
-    top: 20px;
+    top: 0px;
     background: none;
     border: none;
     padding: 10px;
@@ -776,12 +742,17 @@ footer {
     left: 0;
     width: 100%;
     background-color: #fff;
+
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     z-index: 100;
   }
 
   nav.active {
     display: block;
+  }
+
+  nav a{
+    color: var(--text-color);
   }
 
   nav ul {
@@ -808,5 +779,17 @@ footer {
 
   nav {
     display: block !important;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
   }
 }

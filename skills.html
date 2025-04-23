@@ -8,180 +8,12 @@
   <link rel="icon" type="image/svg+xml" href="assets/img/icon.svg">
   <meta name="description" content="Compétences techniques de Thomas DEMAY, Ingénieur DevOps avec 9 ans d'expérience">
   <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/skills.css">
   <link rel="stylesheet" href="assets/css/achievements.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    .progress-bar-container {
-      margin-bottom: 1.5rem;
-    }
-
-    .progress-bar-label {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 0.5rem;
-      font-weight: 500;
-    }
-
-    .progress-bar {
-      height: 8px;
-      background-color: #e2e8f0;
-      border-radius: 4px;
-      overflow: hidden;
-    }
-
-    .progress-bar-fill {
-      height: 100%;
-      background-color: var(--primary-color);
-      border-radius: 4px;
-    }
-
-    .expertise-level {
-      margin-bottom: 2rem;
-    }
-
-    .expertise-title {
-      border-bottom: 2px solid var(--border-color);
-      padding-bottom: 0.5rem;
-      margin-bottom: 1.5rem;
-      font-size: 1.2rem;
-      color: var(--secondary-color);
-    }
-
-    .expertise-items {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .expertise-item:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-      border-color: var(--primary-color);
-    }
-
-    .expertise-item {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      background-color: #fff;
-      border-radius: 8px;
-      padding: 1rem;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-      border: 1px solid #e2e8f0;
-      text-align: center;
-      transition: all 0.3s ease;
-    }
-
-    .expertise-icon {
-      width: 60px;
-      height: 60px;
-      background-color: rgba(37, 99, 235, 0.1);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-right: 0.5rem;
-      margin-left: 0.5rem;
-      flex-shrink: 0;
-    }
-
-    .expertise-name {
-      font-weight: 600;
-      margin: 0;
-    }
-
-    .expertise-rating {
-      display: flex;
-      justify-content: center;
-      gap: 0.2rem;
-      color: var(--accent-color);
-    }
-
-    .devops-process {
-      margin-top: 3rem;
-    }
-
-    .process-steps {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin-top: 2rem;
-      justify-content: center;
-    }
-
-    .process-step {
-      flex: 1;
-      min-width: 150px;
-      max-width: 200px;
-      text-align: center;
-      position: relative;
-    }
-
-    .process-step:not(:last-child)::after {
-      content: '';
-      position: absolute;
-      top: 30px;
-      right: -10px;
-      width: 20px;
-      height: 2px;
-      background-color: var(--primary-color);
-    }
-
-    .step-icon {
-      width: 60px;
-      height: 60px;
-      background-color: var(--secondary-color);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 1rem;
-      color: white;
-    }
-
-    .step-icon:hover {
-      background-color: var(--primary-color);
-      color: white;
-    }
-
-    .step-title {
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
-
-    .step-desc {
-      font-size: 0.9rem;
-      color: var(--text-color);
-    }
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    @media (max-width: 1200px) {
-      .skills-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 768px) {
-      .skills-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .process-step:not(:last-child)::after {
-        display: none;
-      }
-    }
-  </style>
 </head>
 
 <body>
@@ -217,41 +49,51 @@
       <div class="card">
         <div class="card-content">
           <div class="devops-process">
-            <div class="process-steps">
-              <div class="process-step">
-                <div class="step-icon">
+            <div class="card-items devops-steps">
+              <div class="card-item">
+                <div class="card-icon">
                   <i class="fas fa-code"></i>
                 </div>
-                <div class="step-title">Développement</div>
-                <div class="step-desc">Intégration des standards de qualité dès le développement</div>
+                <div class="card-content">
+                  <h3>Développement</h3>
+                  <p>Intégration des standards de qualité dès le développement</p>
+                </div>
               </div>
-              <div class="process-step">
-                <div class="step-icon">
+              <div class="card-item">
+                <div class="card-icon">
                   <i class="fas fa-vial"></i>
                 </div>
-                <div class="step-title">Test</div>
-                <div class="step-desc">Automatisation des tests unitaires et d'intégration</div>
+                <div class="card-content">
+                  <h3>Test</h3>
+                  <p>Automatisation des tests unitaires et d'intégration</p>
+                </div>
               </div>
-              <div class="process-step">
-                <div class="step-icon">
+              <div class="card-item">
+                <div class="card-icon">
                   <i class="fas fa-cube"></i>
                 </div>
-                <div class="step-title">Build</div>
-                <div class="step-desc">Construction des artéfacts et des images conteneurs</div>
+                <div class="card-content">
+                  <h3>Build</h3>
+                  <p>Construction des artéfacts et des images conteneurs</p>
+                </div>
               </div>
-              <div class="process-step">
-                <div class="step-icon">
+              <div class="card-item">
+                <div class="card-icon">
                   <i class="fas fa-rocket"></i>
                 </div>
-                <div class="step-title">Déploiement</div>
-                <div class="step-desc">Déploiement automatisé et orchestré</div>
+                <div class="card-content">
+                  <h3>Déploiement</h3>
+                  <p>Déploiement automatisé et orchestré</p>
+                </div>
               </div>
-              <div class="process-step">
-                <div class="step-icon">
+              <div class="card-item">
+                <div class="card-icon">
                   <i class="fas fa-chart-line"></i>
                 </div>
-                <div class="step-title">Monitoring</div>
-                <div class="step-desc">Surveillance continue et alerting</div>
+                <div class="card-content">
+                  <h3>Monitoring</h3>
+                  <p>Surveillance continue et alerting</p>
+                </div>
               </div>
             </div>
           </div>
@@ -389,60 +231,76 @@
         <div class="card-content">
           <div class="expertise-level">
             <h3 class="expertise-title">Compétences DevOps</h3>
-            <div class="expertise-items">
-              <div class="expertise-item">
-                <div class="expertise-icon">
+            <div class="card-items">
+              <div class="card-item">
+                <div class="card-icon">
                   <i class="fas fa-cube"></i>
                 </div>
-                <div class="expertise-name">Conteneurisation</div>
+                <div class="card-content">
+                  <h3>Conteneurisation</h3>
+                </div>
               </div>
-              <div class="expertise-item">
-                <div class="expertise-icon">
+              <div class="card-item">
+                <div class="card-icon">
                   <i class="fas fa-ship"></i>
                 </div>
-                <div class="expertise-name">Kubernetes</div>
+                <div class="card-content">
+                  <h3>Kubernetes</h3>
+                </div>
               </div>
-              <div class="expertise-item">
-                <div class="expertise-icon">
+              <div class="card-item">
+                <div class="card-icon">
                   <i class="fas fa-sync-alt"></i>
                 </div>
-                <div class="expertise-name">CI/CD</div>
+                <div class="card-content">
+                  <h3>CI/CD</h3>
+                </div>
               </div>
-              <div class="expertise-item">
-                <div class="expertise-icon">
+              <div class="card-item">
+                <div class="card-icon">
                   <i class="fas fa-robot"></i>
                 </div>
-                <div class="expertise-name">Automatisation</div>
+                <div class="card-content">
+                  <h3>Automatisation</h3>
+                </div>
               </div>
             </div>
           </div>
 
           <div class="expertise-level">
             <h3 class="expertise-title">Compétences fonctionnelles</h3>
-            <div class="expertise-items">
-              <div class="expertise-item">
-                <div class="expertise-icon">
+            <div class="card-items">
+              <div class="card-item">
+                <div class="card-icon">
                   <i class="fas fa-university"></i>
                 </div>
-                <div class="expertise-name">Banque</div>
+                <div class="card-content">
+                  <h3>Banque</h3>
+                </div>
               </div>
-              <div class="expertise-item">
-                <div class="expertise-icon">
+              <div class="card-item">
+                <div class="card-icon">
                   <i class="fas fa-broadcast-tower"></i>
                 </div>
-                <div class="expertise-name">Telecom</div>
+                <div class="card-content">
+                  <h3>Telecom</h3>
+                </div>
               </div>
-              <div class="expertise-item">
-                <div class="expertise-icon">
+              <div class="card-item">
+                <div class="card-icon">
                   <i class="fas fa-atom"></i>
                 </div>
-                <div class="expertise-name">Nucléaire</div>
+                <div class="card-content">
+                  <h3>Nucléaire</h3>
+                </div>
               </div>
-              <div class="expertise-item">
-                <div class="expertise-icon">
+              <div class="card-item">
+                <div class="card-icon">
                   <i class="fas fa-graduation-cap"></i>
                 </div>
-                <div class="expertise-name">Education</div>
+                <div class="card-content">
+                  <h3>Education</h3>
+                </div>
               </div>
             </div>
           </div>

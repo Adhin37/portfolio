@@ -88,7 +88,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   };
 
-
   // Initialize all functions
   setupMobileNav();
   highlightCurrentPage();

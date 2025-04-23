@@ -8,12 +8,13 @@
   <link rel="icon" type="image/svg+xml" href="assets/img/icon.svg">
   <meta name="description" content="Compétences techniques de Thomas DEMAY, Ingénieur DevOps avec 9 ans d'expérience">
   <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/achievements.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-        .progress-bar-container {
+    .progress-bar-container {
       margin-bottom: 1.5rem;
     }
 
@@ -140,6 +141,7 @@
       margin: 0 auto 1rem;
       color: white;
     }
+
     .step-icon:hover {
       background-color: var(--primary-color);
       color: white;
@@ -162,7 +164,7 @@
       margin-top: 2rem;
     }
 
-        @media (max-width: 1200px) {
+    @media (max-width: 1200px) {
       .skills-grid {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -200,7 +202,7 @@
     </div>
   </header>
 
-  
+
   <section class="hero">
     <div class="container">
       <h1>Compétences Techniques</h1>
@@ -208,7 +210,7 @@
     </div>
   </section>
 
-  
+
   <section id="devops-expertise">
     <div class="container">
       <h2 class="section-title">Mon approche DevOps</h2>
@@ -258,7 +260,7 @@
     </div>
   </section>
 
-  
+
   <section id="skills" class="light-bg">
     <div class="container">
       <h2 class="section-title">Compétences Techniques</h2>
@@ -378,7 +380,7 @@
     </div>
   </section>
 
-  
+
   <section id="expertise-levels">
     <div class="container">
       <h2 class="section-title">Domaines d'expertise</h2>
@@ -449,18 +451,25 @@
     </div>
   </section>
 
-  
+
+  <!-- Advanced DevOps Expertise -->
   <section id="advanced-devops" class="light-bg">
     <div class="container">
       <h2 class="section-title">Réalisations DevOps</h2>
-      <div class="card">
-        <div class="card-content">
+
+      <div class="devops-achievements">
+        <div class="intro-text">
           <p>Mon expertise DevOps se traduit par des réalisations concrètes qui ont transformé les processus de
             développement et de déploiement dans chacune de mes missions:</p>
+        </div>
 
-          <div class="skill-category mt-3">
-            <h3><i class="fas fa-rocket"></i> Optimisation de la Livraison</h3>
-            <ul>
+        <div class="achievements-grid">
+          <div class="achievement-item">
+            <div class="achievement-header">
+              <i class="fas fa-rocket"></i>
+              <h3>Optimisation de la Livraison</h3>
+            </div>
+            <ul class="achievement-list">
               <li>Réduction des temps de déploiement de plusieurs heures à moins de 15 minutes</li>
               <li>Mise en place de stratégies de déploiement zero-downtime avec Kubernetes</li>
               <li>Automatisation des processus de rollback en cas d'erreur</li>
@@ -468,9 +477,12 @@
             </ul>
           </div>
 
-          <div class="skill-category mt-3">
-            <h3><i class="fas fa-exchange-alt"></i> Migration vers le Cloud</h3>
-            <ul>
+          <div class="achievement-item">
+            <div class="achievement-header">
+              <i class="fas fa-exchange-alt"></i>
+              <h3>Migration vers le Cloud</h3>
+            </div>
+            <ul class="achievement-list">
               <li>Migration réussie d'applications monolithiques vers des architectures microservices</li>
               <li>Transformation d'applications sur VM vers des containers orchestrés</li>
               <li>Mise en place de stratégies d'auto-scaling pour optimiser les ressources</li>
@@ -478,9 +490,12 @@
             </ul>
           </div>
 
-          <div class="skill-category mt-3">
-            <h3><i class="fas fa-shield-alt"></i> Qualité et Sécurité</h3>
-            <ul>
+          <div class="achievement-item">
+            <div class="achievement-header">
+              <i class="fas fa-shield-alt"></i>
+              <h3>Qualité et Sécurité</h3>
+            </div>
+            <ul class="achievement-list">
               <li>Intégration de SonarQube dans les pipelines CI/CD pour l'analyse de code</li>
               <li>Mise en place de scanning de vulnérabilités des images Docker</li>
               <li>Implémentation de tests d'infrastructure avec Molecule</li>
@@ -488,9 +503,12 @@
             </ul>
           </div>
 
-          <div class="skill-category mt-3">
-            <h3><i class="fas fa-chart-line"></i> Monitoring et Observabilité</h3>
-            <ul>
+          <div class="achievement-item">
+            <div class="achievement-header">
+              <i class="fas fa-chart-line"></i>
+              <h3>Monitoring et Observabilité</h3>
+            </div>
+            <ul class="achievement-list">
               <li>Configuration de dashboards Prometheus pour le monitoring en temps réel</li>
               <li>Mise en place de systèmes d'alerting proactifs</li>
               <li>Centralisation des logs pour analyse et troubleshooting</li>

@@ -1,0 +1,124 @@
+/* Styles pour la section Réalisations DevOps */
+.devops-achievements {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.intro-text {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-color);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+}
+
+.achievement-item {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  border-top: 4px solid var(--primary-color);
+}
+
+.achievement-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.achievement-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.achievement-header i {
+  font-size: 2rem;
+  color: var(--secondary-color);
+  margin-right: 1rem;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(37, 99, 235, 0.1);
+  border-radius: 50%;
+}
+
+.achievement-header h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  color: var(--secondary-color);
+  font-weight: 600;
+}
+
+.achievement-list {
+  padding-left: 1.5rem;
+  margin: 0;
+}
+
+.achievement-list li {
+  margin-bottom: 0.8rem;
+  position: relative;
+  line-height: 1.6;
+}
+
+.achievement-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* Animation subtile sur survol */
+.achievement-item:hover .achievement-header i {
+  color: var(--primary-color);
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 992px) {
+  .achievements-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .achievement-item {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #advanced-devops {
+    padding: 4rem 0;
+  }
+  
+  .achievement-header i {
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .achievement-header h3 {
+    font-size: 1.2rem;
+  }
+}

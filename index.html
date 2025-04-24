@@ -8,16 +8,12 @@
   <link rel="icon" type="image/svg+xml" href="assets/img/icon.svg">
   <meta name="description" content="Portfolio de Thomas DEMAY, Ingénieur DevOps avec 9 ans d'expérience">
   <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/index.css">
   <link rel="stylesheet" href="assets/css/fade-effects.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    .skills-grid {
-      grid-template-columns: auto;
-    }
-  </style>
 </head>
 
 <body>
@@ -57,28 +53,88 @@
     </div>
   </section>
 
-  <section id="about">
+  <section id="about" class="light-bg">
     <div class="container">
       <h2 class="section-title">À propos de moi</h2>
-      <div class="card">
-        <div class="card-content">
-          <p>Ingénieur DevOps avec 9 ans d'expérience dans la mise en place de chaînes d'automatisation continue, du
-            développement jusqu'à la production. J'ai travaillé dans divers secteurs comme l'éducation, les
-            télécommunications, la banque et le secteur nucléaire.</p>
-          <p>Ma spécialité est l'amélioration des temps de livraison, passant des heures aux minutes grâce à
-            l'implémentation de processus DevOps efficaces.</p>
-          <h3>Points forts</h3>
-          <ul>
-            <li>Mise en place de chaînes d'automatisation continue</li>
-            <li>Amélioration significative des temps de livraison</li>
-            <li>Migration vers des architectures containerisées</li>
-            <li>Développement full stack</li>
-            <li>Gestion de projets Agile</li>
-          </ul>
-          <h3>Disponibilité</h3>
-          <p>Je suis actuellement disponible pour de nouvelles opportunités en tant qu'Ingénieur DevOps.</p>
+
+      <div class="about-container">
+        <div class="card about-content">
+          <div class="card-content">
+            <p>Ingénieur DevOps avec <b>9 ans d'expérience</b> dans la mise en place de chaînes d'automatisation
+              continue, du
+              développement jusqu'à la production.</p>
+            <p>J'ai travaillé dans divers secteurs comme l'éducation, les
+              télécommunications, la banque et le secteur nucléaire.</p>
+            <p>Ma spécialité est l'amélioration des temps de livraison, passant des heures aux minutes grâce à
+              l'implémentation de processus DevOps efficaces.</p>
+          </div>
+          <h3 class="strengths-title">Points forts</h3>
+          <div class="skills-grid">
+            <div class="card-item strength-item">
+              <div class="card-icon">
+                <i class="fas fa-rocket"></i>
+              </div>
+              <div class="card-content">
+                <h3>Chaînes d'automatisation continue</h3>
+                <p>Mise en place et optimisation des pipelines CI/CD</p>
+              </div>
+            </div>
+    
+            <div class="card-item strength-item">
+              <div class="card-icon">
+                <i class="fas fa-tachometer-alt"></i>
+              </div>
+              <div class="card-content">
+                <h3>Amélioration des temps de livraison</h3>
+                <p>Réduction des délais de déploiement de plusieurs heures à quelques minutes</p>
+              </div>
+            </div>
+    
+            <div class="card-item strength-item">
+              <div class="card-icon">
+                <i class="fas fa-cubes"></i>
+              </div>
+              <div class="card-content">
+                <h3>Architectures containerisées</h3>
+                <p>Migration et modernisation d'applications avec Docker et Kubernetes</p>
+              </div>
+            </div>
+    
+            <div class="card-item strength-item">
+              <div class="card-icon">
+                <i class="fas fa-code"></i>
+              </div>
+              <div class="card-content">
+                <h3>Développement full stack</h3>
+                <p>Maîtrise du cycle complet de développement d'applications</p>
+              </div>
+            </div>
+    
+            <div class="card-item strength-item">
+              <div class="card-icon">
+                <i class="fas fa-tasks"></i>
+              </div>
+              <div class="card-content">
+                <h3>Gestion de projets Agile</h3>
+                <p>Méthodologies Scrum et Kanban appliquées aux projets DevOps</p>
+              </div>
+            </div>
+          </div>
+    
+          <div class="about-container">
+            <div class="card availability-card">
+              <div class="card-content">
+                <div class="availability-indicator">
+                  <span class="status-dot"></span>
+                  <h3>Disponibilité</h3>
+                </div>
+                <p>Je suis actuellement disponible pour de nouvelles opportunités en tant qu'ingénieur DevOps.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+
     </div>
   </section>
 
@@ -133,7 +189,7 @@
   <section id="skills-highlight" class="light-bg">
     <div class="container">
       <h2 class="section-title">Compétences clés</h2>
-      <div class="skills-grid">
+      <div class="skills-grid grid-columns">
         <div class="skill-card">
           <div class="skill-card-header">
             <h3><i class="fas fa-cloud"></i> DevOps & Cloud</h3>

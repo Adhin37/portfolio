@@ -19,6 +19,11 @@
 <body>
   <header>
     <div class="container header-container">
+      <button class="mobile-nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
       <div class="logo">
         <a href="index.html">Thomas DEMAY</a>
       </div>
@@ -42,7 +47,7 @@
         </div>
         <div class="hero-text">
           <h1>Thomas DEMAY</h1>
-          <p class="hero-subtitle">Ingénieur DevOps | 9 ans d'expérience</p>
+          <p class="hero-subtitle">Ingénieur DevOps | <span class="years-of-experience">9</span> ans d'expérience</p>
           <div>
             <a href="contact.html" class="btn">Me contacter</a>
             <a href="assets/files/CV_Thomas_DEMAY.pdf" class="btn btn-outline" target="_blank"><i
@@ -60,7 +65,7 @@
       <div class="about-container">
         <div class="card about-content">
           <div class="card-content">
-            <p>Ingénieur DevOps avec <b>9 ans d'expérience</b> dans la mise en place de chaînes d'automatisation
+            <p>Ingénieur DevOps avec <b><span class="years-of-experience">9</span> ans d'expérience</b> dans la mise en place de chaînes d'automatisation
               continue, du
               développement jusqu'à la production.</p>
             <p>J'ai travaillé dans divers secteurs comme l'éducation, les
@@ -252,6 +257,7 @@
 
   <script src="assets/js/main.js"></script>
   <script src="assets/js/fade-effect.js"></script>
+  <div class="nav-overlay"></div>
 </body>
 
 </html>

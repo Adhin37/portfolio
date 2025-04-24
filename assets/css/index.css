@@ -83,4 +83,7 @@
   .about-container {
     flex-direction: column;
   }
+  .availability-card{
+    min-width: unset;
+  }
 }

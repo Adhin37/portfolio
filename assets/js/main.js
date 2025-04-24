@@ -1,31 +1,38 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Mobile navigation toggle
   const setupMobileNav = () => {
-    const header = document.querySelector("header");
-    if (!header) return;
-
-    // Create mobile nav elements if they don't exist already
-    if (!document.querySelector(".mobile-nav-toggle")) {
-      const navToggle = document.createElement("button");
-      navToggle.className = "mobile-nav-toggle";
-      navToggle.innerHTML = "<span></span><span></span><span></span>";
-      navToggle.setAttribute("aria-label", "Toggle navigation");
-
-      const headerContainer = document.querySelector(".header-container");
-      headerContainer.appendChild(navToggle);
-
-      // Add the mobile navigation toggle functionality
-      navToggle.addEventListener("click", function () {
-        const nav = document.querySelector("nav");
-        if (nav.classList.contains("active")) {
-          nav.classList.remove("active");
-          this.classList.remove("active");
-        } else {
-          nav.classList.add("active");
-          this.classList.add("active");
-        }
+    const navToggle = document.querySelector(".mobile-nav-toggle");
+    const nav = document.querySelector("nav");
+    
+    if (!navToggle || !nav) return;
+    
+    // Create overlay if it doesn't exist
+    if (!document.querySelector(".nav-overlay")) {
+      const overlay = document.createElement("div");
+      overlay.className = "nav-overlay";
+      document.body.appendChild(overlay);
+      
+      // Close menu when clicking overlay
+      overlay.addEventListener("click", () => {
+        nav.classList.remove("active");
+        navToggle.classList.remove("active");
+        overlay.classList.remove("active");
+        document.body.style.overflow = "";
       });
     }
+  
+    const overlay = document.querySelector(".nav-overlay");
+    
+    navToggle.addEventListener("click", function() {
+      const isActive = nav.classList.contains("active");
+      
+      nav.classList.toggle("active");
+      this.classList.toggle("active");
+      overlay.classList.toggle("active");
+      
+      // Prevent scrolling when menu is open
+      document.body.style.overflow = isActive ? "" : "hidden";
+    });
   };
 
   // Add active class to current page in navigation
@@ -65,6 +72,33 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   };
 
+  // Calcule et met à jour dynamiquement les années d'expérience
+  const updateExperienceYears = () => {
+    // Date de début de la carrière
+    const careerStartDate = new Date(2015, 8, 1);
+    const currentDate = new Date();
+
+    const yearsOfExperience = Math.floor(
+      (currentDate - careerStartDate) / (365.25 * 24 * 60 * 60 * 1000)
+    );
+
+    const experienceElements = document.querySelectorAll(
+      ".years-of-experience"
+    );
+
+    experienceElements.forEach((element) => {
+      element.textContent = yearsOfExperience;
+    });
+
+    const experiencePhrases = document.querySelectorAll(".experience-phrase");
+    experiencePhrases.forEach((element) => {
+      element.innerHTML = element.innerHTML.replace(
+        /\d+\s+ans/,
+        `${yearsOfExperience} ans`
+      );
+    });
+  };
+
   // Add animation to timeline items when they enter the viewport
   const setupScrollAnimations = () => {
     const timelineItems = document.querySelectorAll(".timeline-item");
@@ -93,4 +127,5 @@ document.addEventListener("DOMContentLoaded", function () {
   highlightCurrentPage();
   setupSmoothScroll();
   setupScrollAnimations();
+  updateExperienceYears();
 });
